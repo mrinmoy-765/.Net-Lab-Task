@@ -1,0 +1,51 @@
+﻿@model TEST.Models.SignUpModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sign Up</title>
+</head>
+<body>
+    <div>
+
+
+    
+        <h2>SignUp</h2>
+        
+        <form action="" method="post">
+            Name: <input type="text" name="Name" value="@(Model == null? "":Model.Name)" class="form-control" />
+            <span class="text-danger">@Html.ValidationMessage("Name")</span>
+            <br />
+
+            Username: <input type="text" name="Username" value="@(Model == null? "":Model.Username)" class="form-control" />
+            <span class="text-danger">@Html.ValidationMessage("Username")</span>
+            <br />
+
+            Email: <input type="email" name="Email" value="@(Model == null? "":Model.Email)" class="form-control" />
+            <span class="text-danger">@Html.ValidationMessage("Email")</span>
+            <br />
+
+            Student ID: <input type="text" name="StudentId" value="@(Model == null? "":Model.StudentId)" class="form-control" />
+            <span class="text-danger">@Html.ValidationMessage("StudentId")</span>
+            <br />
+
+            Password: <input type="password" name="Password" value="@(Model == null? "":Model.Password)" class="form-control" />
+            <span class="text-danger">@Html.ValidationMessage("Password")</span>
+            <br />
+
+
+            DOB: <input type="date" name="dob" value="@(Model == null ? "" : Model.dob.ToString("yyyy-MM-dd"))" class="form-control" />
+            <span class="text-danger">@Html.ValidationMessage("dob")</span>
+            <br />
+
+            <br />
+            <input type="submit" value="Sign Up" class="btn btn-success" />
+        </form>
+    </div>
+</body>
+</html>
